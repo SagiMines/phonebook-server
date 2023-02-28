@@ -13,11 +13,15 @@ type Contact {
 }
 
 type Query {
-  getAllContacts: [Contact!]!
+  getFiveDesc(offset: Float!): [Contact!]!
+  getAll: [Contact!]!
+  getOne(id: Float!): Contact!
 }
 
 type Mutation {
   createContact(contact: ContactDto!): Contact!
+  updateContact(contact: ContactDto!, id: Float!): Contact!
+  removeContact(id: Float!): Contact!
 }
 
 input ContactDto {

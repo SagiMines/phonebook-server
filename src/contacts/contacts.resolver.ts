@@ -7,13 +7,33 @@ import { Contact } from './entities/contact.entity';
 export class ContactsResolver {
   constructor(private contactsService: ContactsService) {}
 
-  @Query(() => [Contact], { name: 'getAllContacts' })
+  @Query(() => [Contact], { name: 'getFiveDesc' })
+  findFiveDesc(@Args('offset') offset: number) {
+    return this.contactsService.findFiveDesc(offset);
+  }
+
+  @Query(() => [Contact], { name: 'getAll' })
   findAll() {
     return this.contactsService.findAll();
+  }
+
+  @Query(() => Contact, { name: 'getOne' })
+  findOne(@Args('id') id: number) {
+    return this.contactsService.findOne(id);
   }
 
   @Mutation(() => Contact, { name: 'createContact' })
   create(@Args('contact') contact: ContactDto) {
     return this.contactsService.create(contact);
+  }
+
+  @Mutation(() => Contact, { name: 'updateContact' })
+  updateContact(@Args('contact') contact: ContactDto, @Args('id') id: number) {
+    return this.contactsService.updateContact(contact, id);
+  }
+
+  @Mutation(() => Contact, { name: 'removeContact' })
+  removeContact(@Args('id') id: number) {
+    return this.contactsService.removeContact(id);
   }
 }
