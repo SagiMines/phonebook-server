@@ -22,6 +22,11 @@ export class ContactsResolver {
     return this.contactsService.findOne(id);
   }
 
+  @Query(() => [Contact], { name: 'getSearchValues' })
+  findSearchValues(@Args('firstName') firstName: string) {
+    return this.contactsService.findSearchValues(firstName);
+  }
+
   @Mutation(() => Contact, { name: 'createContact' })
   create(@Args('contact') contact: ContactDto) {
     return this.contactsService.create(contact);

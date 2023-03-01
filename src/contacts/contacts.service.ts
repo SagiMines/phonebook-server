@@ -1,6 +1,6 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, UpdateResult } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { ContactDto } from './dto/contact-dto';
 import { Contact } from './entities/contact.entity';
 
@@ -17,6 +17,12 @@ export class ContactsService {
 
   async findOne(id: number): Promise<Contact> {
     return this.contactsRepo.findOne({ where: { id } });
+  }
+
+  async findSearchValues(firstName: string): Promise<Contact[]> {
+    return this.contactsRepo.find({
+      where: { firstName: ILike(`%${firstName}%`) },
+    });
   }
 
   async findFiveDesc(offset: number): Promise<Contact[]> {
