@@ -16,6 +16,7 @@ type Query {
   getFiveDesc(offset: Float!): [Contact!]!
   getAll: [Contact!]!
   getOne(id: Float!): Contact!
+  getSearchValues(firstName: String!): [Contact!]!
 }
 
 type Mutation {
