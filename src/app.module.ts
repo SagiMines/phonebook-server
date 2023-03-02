@@ -6,6 +6,7 @@ import { join } from 'path';
 import { ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloDriver } from '@nestjs/apollo/dist/drivers';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { PhotoFilterModule } from './photo-filter/photo-filter.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       },
     }),
     ContactsModule,
+    PhotoFilterModule,
   ],
   controllers: [],
   providers: [],

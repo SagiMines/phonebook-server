@@ -1,4 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
+import { PhotoFilter } from 'src/photo-filter/entities/photo-filter.entity';
+import { OneToOne } from 'typeorm';
 import { Column } from 'typeorm/decorator/columns/Column';
 import { PrimaryGeneratedColumn } from 'typeorm/decorator/columns/PrimaryGeneratedColumn';
 import { Entity } from 'typeorm/decorator/entity/Entity';
@@ -33,4 +35,8 @@ export class Contact {
   @Field({ nullable: false })
   @Column({ nullable: false, type: 'varchar', length: 1000 })
   photo: string;
+
+  @OneToOne(() => PhotoFilter, (photoFilter) => photoFilter.contact)
+  @Field(() => PhotoFilter)
+  photoFilter: PhotoFilter;
 }

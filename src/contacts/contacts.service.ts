@@ -50,14 +50,6 @@ export class ContactsService {
   async removeContact(id: number): Promise<Contact> {
     const contact = await this.findOne(id);
     await this.contactsRepo.remove(contact);
-    return {
-      id,
-      firstName: '',
-      lastName: '',
-      nickName: '',
-      address: '',
-      phoneNumbers: [],
-      photo: '',
-    };
+    return contact;
   }
 }
