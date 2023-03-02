@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type PhotoFilter {
+  id: Float!
+  type: String!
+  amount: Int!
+  contact: Contact!
+  contactId: Int!
+}
+
 type Contact {
   id: Float!
   firstName: String!
@@ -10,6 +18,7 @@ type Contact {
   phoneNumbers: [String!]!
   address: String!
   photo: String!
+  photoFilter: PhotoFilter!
 }
 
 type Query {
@@ -17,12 +26,15 @@ type Query {
   getAll: [Contact!]!
   getOne(id: Float!): Contact!
   getSearchValues(firstName: String!): [Contact!]!
+  getByContactId(contactId: Float!): PhotoFilter!
 }
 
 type Mutation {
   createContact(contact: ContactDto!): Contact!
   updateContact(contact: ContactDto!, id: Float!): Contact!
   removeContact(id: Float!): Contact!
+  createPhotoFilter(photoFilter: PhotoFilterDto!): PhotoFilter!
+  updatePhotoFilter(photoFilter: PhotoFilterDto!, contactId: Float!): PhotoFilter!
 }
 
 input ContactDto {
@@ -32,4 +44,10 @@ input ContactDto {
   phoneNumbers: [String!]!
   address: String!
   photo: String!
+}
+
+input PhotoFilterDto {
+  type: String!
+  amount: Int!
+  contactId: Int!
 }
