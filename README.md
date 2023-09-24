@@ -1,7 +1,7 @@
 # Phonebook
 
 <div align='center'>
-<img src='https://lh3.googleusercontent.com/pw/ADCreHcw1MCcyUzPoegjnXSRx2U-YrjjmzkwabyscP6F_vUOcModeHRNqH0fyofnF7DT-0b9_WIcg9MJra8krITPN2HuP2POe7O2wgq-IRfZuqVVY8rw-BVig7fFgTm3cByQVFr_sLonvHXCoQAU9spLM1ij=w831-h480-s-no?authuser=3' width=400 />
+<img src='https://lh3.googleusercontent.com/pw/ADCreHcw1MCcyUzPoegjnXSRx2U-YrjjmzkwabyscP6F_vUOcModeHRNqH0fyofnF7DT-0b9_WIcg9MJra8krITPN2HuP2POe7O2wgq-IRfZuqVVY8rw-BVig7fFgTm3cByQVFr_sLonvHXCoQAU9spLM1ij=w831-h480-s-no?authuser=3' width=600 />
 </div>
 
 Welcome to Phonebook, an open-source web application that simplifies contact management. Phonebook allows users to store contact information, including full names, nicknames, phone numbers, addresses, and photos. Users can add, delete, update, and search for contacts with ease. This project is developed using React for the frontend and Node.js with NestJS for the backend. The client-server communication is powered by GraphQL, and all data is stored in a PostgreSQL database. The server and database are Dockerized for easy deployment and scalability.
