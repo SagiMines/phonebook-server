@@ -1,4 +1,4 @@
-# Phonebook
+# Phonebook - Server Repository
 
 <div align='center'>
 <img src='https://lh3.googleusercontent.com/pw/ADCreHcw1MCcyUzPoegjnXSRx2U-YrjjmzkwabyscP6F_vUOcModeHRNqH0fyofnF7DT-0b9_WIcg9MJra8krITPN2HuP2POe7O2wgq-IRfZuqVVY8rw-BVig7fFgTm3cByQVFr_sLonvHXCoQAU9spLM1ij=w831-h480-s-no?authuser=3' width=600 />
@@ -40,7 +40,7 @@ Phonebook simplifies contact management, making it easy to store and organize yo
 
 ## Getting Started
 
-To set up Phonebook locally or deploy a similar platform, follow these steps:
+To set up Phonebook server locally or deploy a similar platform, follow these steps:
 
 1. Clone this repository to your local machine.
 
@@ -67,7 +67,7 @@ npm run docker-compose:dev
 
 ## Environment Variables
 
-To run this project, you will need to add an `.env` file to the root of the project with the following environment variables included:
+To run Phonebook server, you will need to add an `.env` file to the root of the project with the following environment variables included:
 
 **General:**
 
